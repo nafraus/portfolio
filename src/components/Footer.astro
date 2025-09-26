@@ -1,0 +1,25 @@
+---
+import Social from './Social.astro';
+
+const platforms = [
+    { name: "github", url: "https://www.github.com/nafraus" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/nickolasfraus" },
+    { name: "itch.io", url: "https://frausnic.itch.io" },
+    //{ name: "linkedin", user: "nickolasfraus" },
+]
+
+---
+
+<footer>
+    {platforms.map((platform) => (
+            <Social platform={platform.name} url={platform.url} />
+    ))}
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
