@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CardLayout from '../layouts/CardLayout.astro';
+
+import * as Post from '../pages/projects/SieveVR.md';
+const allPosts = Object.values(import.meta.glob('../pages/projects/*.md', { eager: true }));
+
+
+---
+
+<BaseLayout pageTitle="Portfolio">
+    <article id="portfolio" class="wrapper style3">
+        <div class="container">
+            <header>
+                <h2>Here’s some stuff I made recently.</h2>
+                <p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+            </header>
+            <div class="row">
+                <!-- Renders all posts into CardLayouts -->
+                {allPosts.map((post:any) => <CardLayout frontmatter={post.frontmatter} />)}
+            </div>
+            <footer>
+                <p>Footer Text Description, is really cool?</p>
+                <a href="#contact">Get in touch with me</a>
+            </footer>
+        </div>
+    </article>
+</BaseLayout>

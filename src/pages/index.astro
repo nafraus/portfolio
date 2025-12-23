@@ -1,28 +1,24 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Nick Fraus";
+
+import About from '../components/About.astro'
+import Portfolio from '../components/Portfolio.astro'
+import Contact from '../components/Contact.astro'
+import Navigation from '../components/Navigation.astro'
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />  
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-
-    <h1>My Astro Site now has new data to test if it is deployed!</h1>
-
-    <Footer />
 
 
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <Navigation/>
+    <div id="top">
+      <About/>
+    </div>
+    <div id="portfolio">
+      <Portfolio/>
+    </div>
+
+    <div id="contact">
+      <Contact/>
+</BaseLayout>

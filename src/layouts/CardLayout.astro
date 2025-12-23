@@ -1,0 +1,10 @@
+---
+const { frontmatter } = Astro.props;
+---
+<div class="col-4 col-6-medium col-12-small">
+    <article class="card">
+        <a href="#" class="image featured"><img src={frontmatter.coverImage} alt="" /></a>
+        <h3><a href="#">{frontmatter.title}</a></h3>
+        <p>{frontmatter.description}</p>
+    </article>
+</div>

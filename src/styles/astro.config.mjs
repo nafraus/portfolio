@@ -1,9 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 import preact from '@astrojs/preact';
-
 // https://astro.build/config
 export default defineConfig({
-    site: "https://vercel.com/nafraus-projects/portfolio/6DiN4uAs2ZGmH3rkd7vdjKmMx4K4",
-    integrations: [preact()]
+  integrations: [preact()]
 });
